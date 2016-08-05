@@ -5,6 +5,9 @@ var Graph = (function () {
         if (options === void 0) { options = {}; }
         utils_1["default"](this, options);
     }
+    Graph.prototype.addVertex = function (vertex) {
+        this.vertices[vertex.getLabel()] = vertex;
+    };
     return Graph;
 }());
 exports.__esModule = true;

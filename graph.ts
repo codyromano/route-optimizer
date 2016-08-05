@@ -1,11 +1,15 @@
 import extend from './utils';
-import {VerticiesMapType, Vertex} from './vertex';
+import {VerticesMapType, Vertex} from './vertex';
 
 class Graph {
-  vertices: VerticiesMapType;
+  private vertices: VerticesMapType;
 
   constructor(options = {}) {
     extend(this, options);
+  }
+
+  addVertex(vertex: Vertex) {
+    this.vertices[vertex.getLabel()] = vertex;
   }
 }
 

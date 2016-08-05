@@ -7,6 +7,16 @@ var Vertex = (function () {
         this.edges = [];
         utils_1["default"](this, options);
     }
+    Vertex.prototype.getLabel = function () {
+        return this.label;
+    };
+    Vertex.prototype.getValue = function () {
+        return this.value;
+    };
+    Vertex.prototype.getEdges = function () {
+        // Clone the array
+        return this.edges.slice();
+    };
     Vertex.prototype.addEdge = function (toLabel, weight) {
         this.edges.push({
             toLabel: toLabel,

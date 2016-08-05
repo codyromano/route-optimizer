@@ -8,17 +8,28 @@ interface VertexType {
   edges: Array<EdgeType>;
 }
 
-interface VerticiesMapType {
+interface VerticesMapType {
   [label: string] : Vertex;
 }
 
 class Vertex {
-  label: string;
-  value: Place = {};
-  edges: Array<EdgeType> = [];
+  private label: string;
+  private value: Place = {};
+  private edges: Array<EdgeType> = [];
 
   constructor(options = {}) {
     extend(this, options);
+  }
+
+  getLabel() {
+    return this.label;
+  }
+  getValue() {
+    return this.value;
+  }
+  getEdges() {
+    // Clone the array
+    return [...this.edges];
   }
 
   addEdge(toLabel: string, weight: number) {
@@ -29,5 +40,5 @@ class Vertex {
   }
 }
 
-export {VertexType, VerticiesMapType, Vertex};
+export {VertexType, VerticesMapType, Vertex};
 export default Vertex;
