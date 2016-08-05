@@ -8,9 +8,14 @@ class Graph {
     extend(this, options);
   }
 
+  getVertices() {
+    // Clone object
+    return extend({}, this.vertices);
+  }
+
   addVertex(vertex: Vertex) {
     this.vertices[vertex.getLabel()] = vertex;
   }
 }
 
-export default Graph;
+export {Graph};
